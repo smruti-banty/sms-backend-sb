@@ -1,10 +1,15 @@
 package com.smruti.demo1.model;
 
+import javax.persistence.*;
+
 /**
  * @author srnay
  *
  */
+@Table(name = "student_table")
+@Entity
 public class Student {
+	@Id
 	private int roll;
 	private String firstname;
 	private String lastname;

@@ -15,16 +15,20 @@ public class StudentService {
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
-    int addOrUpdateStudent(Student s){
-        return studentRepository.save(s).getRoll();
+
+    public Student addOrUpdateStudent(Student s) {
+        return studentRepository.save(s);
     }
-    Optional<Student> getStudent(int roll){
+
+    public Optional<Student> getStudent(int roll) {
         return studentRepository.findById(roll);
     }
-    List<Student> getStudents(){
+
+    public List<Student> getStudents() {
         return studentRepository.findAll();
     }
-    void deleteStudent(int roll){
+
+    public void deleteStudent(int roll) {
         studentRepository.deleteById(roll);
     }
 }
